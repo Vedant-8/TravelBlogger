@@ -1,0 +1,56 @@
+:root {
+  --hero-overlay: rgba(0, 0, 0, 0.35);
+}
+
+/* Hero section with background image */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2400&auto=format&fit=crop")
+      center/cover no-repeat fixed;
+  padding-top: 6rem; /* offset for fixed navbar */
+}
+
+/* Smooth focus outline for accessibility */
+:focus-visible {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+/* Make images nicely cropped when used with ratio */
+.object-fit-cover {
+  object-fit: cover;
+}
+.object-fit-contain {
+  object-fit: contain;
+}
+
+/* Improve card hover */
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+/* Tweak navbar link active state via scrollspy */
+.navbar .nav-link.active {
+  color: #fff;
+  position: relative;
+}
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background: #0d6efd;
+  border-radius: 1px;
+}
+
+/* Reduce modal padding on small screens */
+@media (max-width: 576px) {
+  .modal-body {
+    padding: 1rem;
+  }
+}
